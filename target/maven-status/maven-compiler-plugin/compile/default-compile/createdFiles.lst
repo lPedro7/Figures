@@ -1,0 +1,15 @@
+com\esliceu\Figures\daos\UserDao.class
+com\esliceu\Figures\daos\Database.class
+com\esliceu\Figures\daos\UserDaoImpl.class
+com\esliceu\Figures\filters\AuthFilter.class
+com\esliceu\Figures\services\LoginService.class
+com\esliceu\Figures\controllers\OwnFiguresController.class
+com\esliceu\Figures\models\User.class
+com\esliceu\Figures\utils\MyProperties.class
+com\esliceu\Figures\controllers\RegisterController.class
+com\esliceu\Figures\daos\FiguraDao.class
+com\esliceu\Figures\daos\FiguraDaoImpl.class
+com\esliceu\Figures\controllers\AllFiguresController.class
+com\esliceu\Figures\controllers\DrawController.class
+com\esliceu\Figures\controllers\LoginController.class
+com\esliceu\Figures\models\Figura.class
