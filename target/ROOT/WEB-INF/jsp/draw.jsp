@@ -95,8 +95,6 @@
 
     function visualitza() {
 
-        ctx.clearRect(0, 0, 1024, 768);
-
         let visNom = document.querySelector('#name').value;
         const visTipus = document.querySelector('#tipus').value
         let visCoordX = document.querySelector('#coordsX').value
@@ -128,6 +126,7 @@
     }
 
     function drawCircle(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
         ctx.beginPath();
         ctx.arc(x, y, gr, 0, 2 * Math.PI);
         ctx.fillStyle = col;
@@ -135,6 +134,7 @@
     }
 
     function drawSquare(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
         ctx.beginPath();
         ctx.rect(x, y, gr, gr);
         ctx.fillStyle = col;
@@ -142,6 +142,7 @@
     }
 
     function drawTriangle(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.lineTo((x), (y + gr));
@@ -152,6 +153,7 @@
     }
 
     function drawPentagon(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
         ctx.beginPath();
         ctx.moveTo(x + gr * Math.cos(0), y + gr * Math.sin(0));
         let rad = (2 * Math.PI) / 5;
@@ -168,6 +170,7 @@
     }
 
     function drawStar(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
 
         let n = 7;
         let R = gr;
@@ -179,7 +182,8 @@
             ctx.lineTo(Math.cos(((1/4 + i)*2*Math.PI/n))*R,-Math.sin(((1/4 + i)*2*Math.PI/n))*R);
            ctx.lineTo(Math.cos(((3/4 + i)*2*Math.PI/n))*r,-Math.sin(((3/4 + i)*2*Math.PI/n))*r);
         }
-        ctx.translate(0,0)
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
         ctx.closePath();
 
         ctx.fillStyle = col;
