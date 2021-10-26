@@ -132,6 +132,16 @@ public class FiguraDaoImpl implements FiguraDao{
 
     @Override
     public void deleteFigura(Figura figura) {
+        Connection con = db.getConnection();
 
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement("DELETE FROM Figura WHERE name=? AND username_owner=?");
+            preparedStatement.setString(1,figura.getNom());
+            preparedStatement.setString(2,figura.getUsername_owner());
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

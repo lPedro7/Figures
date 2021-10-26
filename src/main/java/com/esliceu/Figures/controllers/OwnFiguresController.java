@@ -36,4 +36,19 @@ public class OwnFiguresController extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String nomFigura = req.getParameter("nom");
+        String username_owner = req.getParameter("user_owner");
+
+        FiguraDao figuraDao = new FiguraDaoImpl();
+
+        Figura f = figuraDao.getFigura(nomFigura,username_owner);
+
+        figuraDao.deleteFigura(f);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/ownfigures.jsp");
+        dispatcher.forward(req, resp);
+    }
 }

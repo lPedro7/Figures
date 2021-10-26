@@ -1,5 +1,6 @@
 com\esliceu\Figures\daos\UserDao.class
 com\esliceu\Figures\daos\Database.class
+com\esliceu\Figures\controllers\VerFigura.class
 com\esliceu\Figures\daos\UserDaoImpl.class
 com\esliceu\Figures\filters\AuthFilter.class
 com\esliceu\Figures\services\LoginService.class

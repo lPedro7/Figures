@@ -27,18 +27,31 @@
         <th>Y</th>
         <th>Grandaria</th>
         <th>Color</th>
+        <th>Visualitza</th>
+        <th>Elimina</th>
     </tr>
     <c:forEach items="${figures}" var="figura">
         <tr>
-            <td>${figura.nom}</td>
-            <td>${figura.tipus}</td>
-            <td>${figura.coordX}</td>
-            <td>${figura.coordY}</td>
-            <td>${figura.grandaria}</td>
-            <td>${figura.color}</td>
+            <form method="post">
+                <td><input type="text" disabled value="${figura.nom}" name="name"></td>
+                <td><input type="text" disabled value="${figura.tipus}" name="tipus"></td>
+                <td><input type="text" disabled value="${figura.coordX}" name="coordX"></td>
+                <td><input type="text" disabled value="${figura.coordY}" name="coordY"></td>
+                <td><input type="text" disabled value="${figura.grandaria}"></td>
+                <td><input type="text" disabled value="${figura.color}"></td>
+                <td><a href="/Figures_war/private/verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
+                </td>
+                <td>
+                    <button formaction="/Figures_war/private/figures?nom=${figura.nom}&user_owner=${figura.username_owner}">Elimina</button>
+                </td>
+            </form>
         </tr>
     </c:forEach>
 </table>
 
+<script>
+
+
+</script>
 </body>
 </html>
