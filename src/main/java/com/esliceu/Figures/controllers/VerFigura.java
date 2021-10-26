@@ -12,31 +12,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(value = "/private/allfigures")
-public class AllFiguresController extends HttpServlet {
-    HttpSession session;
-    FiguraDao figuraDao;
-    List<Figura> figuras;
-
+@WebServlet(value = "/private/verfigura")
+public class VerFigura extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        session = req.getSession();
-        figuraDao = new FiguraDaoImpl();
-        figuras = figuraDao.getFigures();
+        FiguraDao figuraDao = new FiguraDaoImpl();
+        HttpSession session = req.getSession();
+        String nomFigura = req.getParameter("nom");
+        String userOwner = req.getParameter("user_owner");
 
-        session.setAttribute("allfigures", figuras);
+        Figura figura = figuraDao.getFigura(nomFigura,userOwner);
 
-        System.out.println("hola");
+        session.setAttribute("verFigura",figura);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/allfigures.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/verfigura.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/ownfigures.jsp");
-        dispatcher.forward(req, resp);
-    }
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/verfigura.jsp");
+        dispatcher.forward(req, resp);    }
 }

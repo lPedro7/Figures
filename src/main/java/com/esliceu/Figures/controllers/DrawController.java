@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
+import java.util.Random;
 
 @WebServlet(value = "/private/draw")
 public class DrawController extends HttpServlet {
@@ -22,6 +23,7 @@ public class DrawController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/draw.jsp");
         dispatcher.forward(req, resp);
     }
@@ -56,6 +58,11 @@ public class DrawController extends HttpServlet {
             errorMessage = "El nom de la figura ja existeix";
             session.setAttribute("errorMessage",errorMessage);
             check=false;
+        }else if(nomFigura==null){
+            nomFigura = tipus+(Math.random()*1000);
+            while (!checkName(figuras,nomFigura)){
+                nomFigura = tipus+(Math.random()*1000);
+            }
         }
 
         System.out.println(check);

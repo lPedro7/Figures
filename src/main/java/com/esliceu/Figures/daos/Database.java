@@ -16,8 +16,7 @@ public class Database {
             Class.forName("org.sqlite.JDBC");
 
             Properties properties = myProperties.getProps();
-            String msi = "C:\\Users\\pedro\\Dropbox\\2daw\\21-22\\Servidor\\Projects\\Figures\\src\\main\\resources\\figura.db";
-            String jdbcStr = properties.getProperty("jdbcstring2");
+            String jdbcStr = properties.getProperty("jdbcstring");
 
             System.out.println(jdbcStr);
 
