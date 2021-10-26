@@ -13,24 +13,29 @@
     <title>Registre</title>
 </head>
 <body>
+<style>
+    <%@include file="/WEB-INF/jsp/css/index.css" %>
+</style>
 
 <h2>Registra't</h2>
 
-<c:if test="${not empty registerMessage}">
-  ${registerMessage}
-</c:if>
 
-<form action="/Figures_war/register" method="post">
+<form action="register" method="post">
+    <c:if test="${not empty registerMessage}">
+        <div id="errorMessage">
+                ${registerMessage}
+        </div>
+    </c:if>
 
-  <label for="username">Usuari</label>
-  <input type="text" name="username">
-  <label for="password">Password</label>
-  <input type="password" name="password">
+    <label for="username">Usuari</label>
+    <input type="text" name="username">
+    <label for="password">Password</label>
+    <input type="password" name="password">
 
-  <button type="submit">Registra't</button>
+    <button type="submit">Registra't</button>
+    <a href="login">Ja tens compte? Logueja't !</a>
 </form>
 
-<a href="/Figures_war/login">Ja tens compte? Logueja't !</a>
 
 </body>
 </html>

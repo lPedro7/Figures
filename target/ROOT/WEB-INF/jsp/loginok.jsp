@@ -15,7 +15,7 @@
 <h2>Has fet login correctament</h2>
 <script>
     setTimeout(()=>{
-        window.location.href = "/Figures_war/private/figures";
+        window.location.href = "private/figures";
     },5000)
 </script>
 </body>

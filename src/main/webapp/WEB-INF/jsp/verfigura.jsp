@@ -13,6 +13,7 @@
     <title>Ver Figura</title>
 </head>
 <body>
+<button onclick="window.location.href='figures'">Torna</button>
 
 <h2>Ver figura</h2>
 <div>

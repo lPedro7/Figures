@@ -8,6 +8,7 @@ com\esliceu\Figures\controllers\OwnFiguresController.class
 com\esliceu\Figures\models\User.class
 com\esliceu\Figures\utils\MyProperties.class
 com\esliceu\Figures\controllers\RegisterController.class
+com\esliceu\Figures\controllers\LogoutController.class
 com\esliceu\Figures\daos\FiguraDao.class
 com\esliceu\Figures\daos\FiguraDaoImpl.class
 com\esliceu\Figures\controllers\AllFiguresController.class

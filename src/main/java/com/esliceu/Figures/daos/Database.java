@@ -16,7 +16,7 @@ public class Database {
             Class.forName("org.sqlite.JDBC");
 
             Properties properties = myProperties.getProps();
-            String jdbcStr = properties.getProperty("jdbcstring");
+            String jdbcStr = properties.getProperty("jdbcstring2");
 
             System.out.println(jdbcStr);
 

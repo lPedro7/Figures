@@ -1,6 +1,7 @@
 package com.esliceu.Figures.filters;
 
 import javax.servlet.FilterChain;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
@@ -20,7 +21,7 @@ public class AuthFilter extends HttpFilter {
             chain.doFilter(req,res);
             return;
         }
-
-        res.sendError(401,"No autoritzat");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+        dispatcher.forward(req, res);
     }
 }

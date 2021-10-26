@@ -12,9 +12,12 @@
 <head>
     <title>All Figures</title>
 </head>
+<style>
+    <%@include file="/WEB-INF/jsp/css/listFigures.css" %>
+</style>
 <body>
 
-<button onclick="window.location.href='/Figures_war/private/figures'">Les meves figures</button>
+<button onclick="window.location.href='figures'">Les meves figures</button>
 
 
 <h2>Figures</h2>
@@ -29,6 +32,7 @@
         <th>Grandaria</th>
         <th>Color</th>
         <th>Propietari</th>
+        <th>Visualitza</th>
     </tr>
     <c:forEach items="${allfigures}" var="figura">
         <tr>
@@ -39,6 +43,8 @@
             <td>${figura.grandaria}</td>
             <td>${figura.color}</td>
             <td>${figura.username_owner}</td>
+            <td><a href="verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
+            </td>
         </tr>
     </c:forEach>
 </table>

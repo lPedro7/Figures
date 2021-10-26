@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 5em;
+}
+
+
+table {
+    border: solid 1px black;
+
+    margin: auto;
+    width: 80%;
+    padding: 10%;
+
+    background: #1ECBD1;
+
+    overflow: paged-x paged-x-controls;
+}
+
+td {
+    background: #ACF6FE;
+}

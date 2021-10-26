@@ -30,8 +30,6 @@ public class OwnFiguresController extends HttpServlet {
 
         session.setAttribute("figures", figuras);
 
-        System.out.println("hola");
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/ownfigures.jsp");
         dispatcher.forward(req, resp);
     }
@@ -40,11 +38,11 @@ public class OwnFiguresController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String nomFigura = req.getParameter("nom");
-        String username_owner = req.getParameter("user_owner");
 
         FiguraDao figuraDao = new FiguraDaoImpl();
 
-        Figura f = figuraDao.getFigura(nomFigura,username_owner);
+
+        Figura f = figuraDao.getFigura(nomFigura, (String) session.getAttribute("username"));
 
         figuraDao.deleteFigura(f);
 

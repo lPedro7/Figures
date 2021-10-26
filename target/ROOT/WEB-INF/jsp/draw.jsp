@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<button onclick="window.location.href='/Figures_war/private/figures'">Torna</button>
+<button onclick="window.location.href='figures'">Torna</button>
 
 <h2> Dibuixa la teva figura</h2>
 
@@ -28,7 +28,7 @@
     </div>
 </c:if>
 
-<form action="/Figures_war/private/draw" method="post">
+<form action="draw" method="post">
 
     <label for="name">Nom de la figura</label>
     <input type="text" name="name" id="name">
@@ -193,14 +193,6 @@
 
 
 }
-
-
-    console.log(name);
-    console.log(tipusFigura);
-    console.log(coordX);
-    console.log(coordY);
-    console.log(grandaria);
-    console.log(color);
 </script>
 </body>
 </html>
