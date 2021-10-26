@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 @WebServlet(value = "/private/draw")
-public class DrawController extends HttpServlet {
+public class DrawServlet extends HttpServlet {
     String errorMessage;
     FiguraDao figuraDao = new FiguraDaoImpl();
 

@@ -8,40 +8,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(value = "/login")
-public class LoginController extends HttpServlet {
-    HttpSession session;
-
+@WebServlet(value = "/register")
+public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        session = req.getSession();
-
-        LoginService loginService = new LoginService();
-
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        LoginService loginService = new LoginService();
 
-        boolean login = loginService.loginOk(username, password);
+        boolean register = loginService.registerOk(username,password);
 
-        if (!login) {
-            req.setAttribute("loginMessage", "Usuari o password incorrecte");
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+        if (!register){
+            req.setAttribute("registerMessage","Error creant l'usuari");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
             dispatcher.forward(req, resp);
-        } else {
-            session.setAttribute("auth", true);
-            session.setAttribute("username", username);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/loginok.jsp");
+        }else {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             dispatcher.forward(req, resp);
         }
 

@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @WebServlet(value = "/private/figures")
-public class OwnFiguresController extends HttpServlet {
+public class OwnFiguresServlet extends HttpServlet {
     HttpSession session;
     FiguraDao figuraDao;
     List<Figura> figuras;

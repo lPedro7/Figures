@@ -18,6 +18,7 @@
 <body>
 
 <button onclick="window.location.href='figures'">Les meves figures</button>
+<button onclick="window.location='../logout'">Logout</button>
 
 
 <h2>Figures</h2>

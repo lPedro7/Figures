@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(value = "/private/allfigures")
-public class AllFiguresController extends HttpServlet {
+public class AllFiguresServlet extends HttpServlet {
     HttpSession session;
     FiguraDao figuraDao;
     List<Figura> figuras;
