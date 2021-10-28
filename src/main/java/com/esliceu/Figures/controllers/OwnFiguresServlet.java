@@ -46,6 +46,7 @@ public class OwnFiguresServlet extends HttpServlet {
 
         figuraDao.deleteFigura(f);
 
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/ownfigures.jsp");
         dispatcher.forward(req, resp);
     }

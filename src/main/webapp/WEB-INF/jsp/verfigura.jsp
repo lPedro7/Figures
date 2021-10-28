@@ -12,12 +12,48 @@
 <head>
     <title>Ver Figura</title>
 </head>
+<style>
+    <%@include file="css/draw.css"%>
+</style>
 <body>
-<button onclick="window.location.href='figures'">Torna</button>
+<header>
+    <nav>
+        <button onclick="window.location.href='figures'">Torna</button>
+        <button onclick="window.location='../logout'">Logout</button>
+    </nav>
 
-<h2>Ver figura</h2>
+    <h2>Ver figura</h2>
+</header>
 <div>
     <canvas id="myCanvas" width="1024" height="768" style="border:1px solid #000000;"></canvas>
+</div>
+<div id="form">
+
+    <h3>Propietats</h3>
+
+    <label for="name">Nom :</label>
+    <input type="text" name="name" id="name" disabled>
+
+    <label for="tipus">Figura :</label>
+    <select name="tipus" id="tipus" disabled>
+        <option value="cercle">Cercle</option>
+        <option value="quadrat">Quadrat</option>
+        <option value="triangle">Triangle</option>
+        <option value="pentagon">Pentàgon</option>
+        <option value="estrella">Estrella 7 Puntes</option>
+    </select>
+
+    <label>Coordenades</label>
+    <label for="coordsX">X :</label>
+    <input type="number" name="coordsX" id="coordsX" disabled>
+    <label for="coordsX">Y :</label>
+    <input type="number" name="coordsY" id="coordsY" disabled>
+
+    <label for="grandaria">Grandària :</label>
+    <input type="number" name="grandaria" id="grandaria" disabled>
+
+    <label for="color">Color :</label>
+    <input type="color" name="color" id="color" disabled>
 </div>
 
 <script>
@@ -32,6 +68,16 @@
     const color = "${verFigura.color}";
     const grandaria = ${verFigura.grandaria};
     const username_owner = '${verFigura.username_owner}';
+
+    document.querySelector('#name').value = nom;
+    document.querySelector('#tipus').value = tipus;
+    document.querySelector('#coordsX').value = coordX;
+    document.querySelector('#coordsY').value = coordY;
+    document.querySelector('#color').value = color;
+    document.querySelector('#grandaria').value = grandaria;
+
+
+
 
     switch (tipus) {
         case "cercle":

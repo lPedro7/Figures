@@ -13,10 +13,17 @@
     <title>Dibuixa la figura</title>
 </head>
 <body>
+<style>    <%@include file="/WEB-INF/jsp/css/draw.css" %>
+</style>
+<header>
+    <nav>
+        <button onclick="window.location.href='figures'">Torna</button>
+        <button onclick="window.location='../logout'">Logout</button>
 
-<button onclick="window.location.href='figures'">Torna</button>
+    </nav>
 
-<h2> Dibuixa la teva figura</h2>
+    <h2> Dibuixa la teva figura</h2>
+</header>
 
 <div>
     <canvas id="myCanvas" width="1024" height="768" style="border:1px solid #000000;"></canvas>
@@ -27,36 +34,40 @@
             ${errorMessage}
     </div>
 </c:if>
+<div id="form">
 
-<form action="draw" method="post">
+    <form action="draw" method="post">
 
-    <label for="name">Nom de la figura</label>
-    <input type="text" name="name" id="name">
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name">
 
-    <select name="tipus" id="tipus">
-        <option value="cercle">Cercle</option>
-        <option value="quadrat">Quadrat</option>
-        <option value="triangle">Triangle</option>
-        <option value="pentagon">Pentàgon</option>
-        <option value="estrella">Estrella 7 Puntes</option>
-    </select>
+        <label for="tipus">Figura :</label>
+        <select name="tipus" id="tipus">
+            <option value="cercle">Cercle</option>
+            <option value="quadrat">Quadrat</option>
+            <option value="triangle">Triangle</option>
+            <option value="pentagon">Pentàgon</option>
+            <option value="estrella">Estrella 7 Puntes</option>
+        </select>
 
-    <label>Coordenades</label>
-    <label for="coordsX">X :</label>
-    <input type="number" name="coordsX" id="coordsX" required>
-    <label for="coordsX">Y :</label>
-    <input type="number" name="coordsY" id="coordsY" required>
+        <label>Coordenades</label>
+        <label for="coordsX">X :</label>
+        <input type="number" name="coordsX" id="coordsX" required>
+        <label for="coordsX">Y :</label>
+        <input type="number" name="coordsY" id="coordsY" required>
 
-    <label for="grandaria">Grandària</label>
-    <input type="number" name="grandaria" id="grandaria" required>
+        <label for="grandaria">Grandària :</label>
+        <input type="number" name="grandaria" id="grandaria" required>
 
-    <label for="color">Color</label>
-    <input type="color" name="color" id="color">
+        <label for="color">Color :</label>
+        <input type="color" name="color" id="color">
 
 
-    <button type="submit" onclick="draw()">Desa</button>
-</form>
-<button onclick='visualitza()'> Visualitza</button>
+        <button type="submit" onclick="draw()">Desa</button>
+    </form>
+    <button onclick='visualitza()' id="visualitzar"> Visualitza</button>
+
+</div>
 <script>
 
 
@@ -126,73 +137,73 @@
     }
 
 
- function drawCircle(x, y, gr, col) {
-    ctx.clearRect(0, 0, 1024, 768);
-    ctx.beginPath();
-    ctx.arc(x, y, gr, 0, 2 * Math.PI);
-    ctx.fillStyle = col;
-    ctx.fill();
-}
-
- function drawSquare(x, y, gr, col) {
-    ctx.clearRect(0, 0, 1024, 768);
-    ctx.beginPath();
-    ctx.rect(x, y, gr, gr);
-    ctx.fillStyle = col;
-    ctx.fill();
-}
-
- function drawTriangle(x, y, gr, col) {
-    ctx.clearRect(0, 0, 1024, 768);
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo((x), (y + gr));
-    ctx.lineTo((x + gr), y);
-    ctx.closePath();
-    ctx.fillStyle = col;
-    ctx.fill();
-}
-
- function drawPentagon(x, y, gr, col) {
-    ctx.clearRect(0, 0, 1024, 768);
-    ctx.beginPath();
-    ctx.moveTo(x + gr * Math.cos(0), y + gr * Math.sin(0));
-    let rad = (2 * Math.PI) / 5;
-    let x1 = x;
-    let y1 = y;
-    for (let i = 0; i < 5; i++) {
-        x1 = x1 + gr * Math.cos(rad * i);
-        y1 = y1 + gr * Math.sin(rad * i);
-        ctx.lineTo(x1, y1);
+    function drawCircle(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
+        ctx.beginPath();
+        ctx.arc(x, y, gr, 0, 2 * Math.PI);
+        ctx.fillStyle = col;
+        ctx.fill();
     }
-    ctx.closePath();
-    ctx.fillStyle = col;
-    ctx.fill();
-}
 
- function drawStar(x, y, gr, col) {
-    ctx.clearRect(0, 0, 1024, 768);
-
-    let n = 7;
-    let R = gr;
-    let r = gr/2;
-
-    ctx.beginPath();
-    ctx.translate(x,y);
-    for(var i=0;i<n;i++){
-        ctx.lineTo(Math.cos(((1/4 + i)*2*Math.PI/n))*R,-Math.sin(((1/4 + i)*2*Math.PI/n))*R);
-        ctx.lineTo(Math.cos(((3/4 + i)*2*Math.PI/n))*r,-Math.sin(((3/4 + i)*2*Math.PI/n))*r);
+    function drawSquare(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
+        ctx.beginPath();
+        ctx.rect(x, y, gr, gr);
+        ctx.fillStyle = col;
+        ctx.fill();
     }
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-    ctx.closePath();
+    function drawTriangle(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo((x), (y + gr));
+        ctx.lineTo((x + gr), y);
+        ctx.closePath();
+        ctx.fillStyle = col;
+        ctx.fill();
+    }
 
-    ctx.fillStyle = col;
+    function drawPentagon(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
+        ctx.beginPath();
+        ctx.moveTo(x + gr * Math.cos(0), y + gr * Math.sin(0));
+        let rad = (2 * Math.PI) / 5;
+        let x1 = x;
+        let y1 = y;
+        for (let i = 0; i < 5; i++) {
+            x1 = x1 + gr * Math.cos(rad * i);
+            y1 = y1 + gr * Math.sin(rad * i);
+            ctx.lineTo(x1, y1);
+        }
+        ctx.closePath();
+        ctx.fillStyle = col;
+        ctx.fill();
+        }
 
-    ctx.fill();
+    function drawStar(x, y, gr, col) {
+        ctx.clearRect(0, 0, 1024, 768);
+
+        let n = 7;
+        let R = gr;
+        let r = gr / 2;
+
+        ctx.beginPath();
+        ctx.translate(x, y);
+        for (let i = 0; i < n; i++) {
+            ctx.lineTo(Math.cos(((1 / 4 + i) * 2 * Math.PI / n)) * R, -Math.sin(((1 / 4 + i) * 2 * Math.PI / n)) * R);
+            ctx.lineTo(Math.cos(((3 / 4 + i) * 2 * Math.PI / n)) * r, -Math.sin(((3 / 4 + i) * 2 * Math.PI / n)) * r);
+        }
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        ctx.closePath();
+
+        ctx.fillStyle = col;
+
+        ctx.fill();
 
 
-}
+    }
 </script>
 </body>
 </html>

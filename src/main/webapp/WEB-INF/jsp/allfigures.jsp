@@ -16,9 +16,10 @@
     <%@include file="/WEB-INF/jsp/css/listFigures.css" %>
 </style>
 <body>
-
-<button onclick="window.location.href='figures'">Les meves figures</button>
-<button onclick="window.location='../logout'">Logout</button>
+<nav>
+    <button onclick="window.location.href='figures'">Les meves figures</button>
+    <button onclick="window.location='../logout'">Logout</button>
+</nav>
 
 
 <h2>Figures</h2>

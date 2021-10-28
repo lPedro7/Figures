@@ -21,6 +21,7 @@ public class AuthFilter extends HttpFilter {
             chain.doFilter(req,res);
             return;
         }
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
         dispatcher.forward(req, res);
     }

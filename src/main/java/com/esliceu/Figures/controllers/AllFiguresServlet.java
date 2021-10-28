@@ -28,8 +28,6 @@ public class AllFiguresServlet extends HttpServlet {
 
         session.setAttribute("allfigures", figuras);
 
-        System.out.println("hola");
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/allfigures.jsp");
         dispatcher.forward(req, resp);
     }

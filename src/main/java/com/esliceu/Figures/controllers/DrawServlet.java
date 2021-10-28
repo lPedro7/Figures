@@ -20,10 +20,10 @@ import java.util.Random;
 public class DrawServlet extends HttpServlet {
     String errorMessage;
     FiguraDao figuraDao = new FiguraDaoImpl();
-
+    boolean check;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    check = true;
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/draw.jsp");
         dispatcher.forward(req, resp);
     }
@@ -32,7 +32,7 @@ public class DrawServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        boolean check = true;
+        check = true;
         String nomFigura = req.getParameter("name");
         String tipus = req.getParameter("tipus");
         String coordX = req.getParameter("coordsX");
@@ -41,31 +41,41 @@ public class DrawServlet extends HttpServlet {
         String color = req.getParameter("color");
         List<Figura> figuras = figuraDao.getFiguresByUser((String) session.getAttribute("username"));
 
-
         if (!isNumber(coordX)) {
             errorMessage = "La coordenada X ha de ser un nombre";
-            session.setAttribute("errorMessage",errorMessage);
+            session.setAttribute("errorMessage", errorMessage);
+            check = false;
+        } else if (Integer.parseInt(coordX) < 0 || Integer.parseInt(coordX) >= 1024) {
+            errorMessage = "La coordenada X ha de ser major a 0 i menor a 1024";
+            session.setAttribute("errorMessage", errorMessage);
             check = false;
         } else if (!isNumber(coordY)) {
             errorMessage = "La coordenada Y ha de ser un nombre";
-            session.setAttribute("errorMessage",errorMessage);
+            session.setAttribute("errorMessage", errorMessage);
+            check = false;
+        } else if (Integer.parseInt(coordY) < 0 || Integer.parseInt(coordY) >= 768) {
+            errorMessage = "La coordenada Y ha de ser major a 0 i menor a 768";
+            session.setAttribute("errorMessage", errorMessage);
             check = false;
         } else if (!isNumber(grandaria)) {
             errorMessage = "La grandària ha de ser un nombre";
+            session.setAttribute("errorMessage", errorMessage);
+            check = false;
+        } else if (Integer.parseInt(grandaria) <= 0) {
+            errorMessage = "La grandària ha de ser major a 0";
             session.setAttribute("errorMessage",errorMessage);
             check = false;
-        }else if(!checkName(figuras,nomFigura)){
+        } else if (!checkName(figuras, nomFigura)) {
             errorMessage = "El nom de la figura ja existeix";
-            session.setAttribute("errorMessage",errorMessage);
-            check=false;
-        }else if(nomFigura==null){
-            nomFigura = tipus+(Math.random()*1000);
-            while (!checkName(figuras,nomFigura)){
-                nomFigura = tipus+(Math.random()*1000);
+            session.setAttribute("errorMessage", errorMessage);
+            check = false;
+        } else if (nomFigura.equals("")) {
+            nomFigura = tipus + Math.round(Math.random() * 100 );
+            while (!checkName(figuras, nomFigura)) {
+                nomFigura = tipus + Math.round(Math.random() * 100);
             }
         }
 
-        System.out.println(check);
 
         if (check) {
             errorMessage = null;
@@ -103,9 +113,9 @@ public class DrawServlet extends HttpServlet {
         }
     }
 
-    boolean checkName(List<Figura> figuras, String name ){
-        for(Figura f : figuras){
-            if (f.getNom().equals(name)){
+    boolean checkName(List<Figura> figuras, String name) {
+        for (Figura f : figuras) {
+            if (f.getNom().equals(name)) {
                 return false;
             }
         }

@@ -8,7 +8,7 @@ public class Figura {
     private int coordX;
     private int coordY;
     private String color;
-    int grandaria;
+    private int grandaria;
 
     public int getCoordX() {
         return coordX;

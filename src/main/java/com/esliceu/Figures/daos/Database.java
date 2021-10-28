@@ -2,6 +2,7 @@ package com.esliceu.Figures.daos;
 
 import com.esliceu.Figures.utils.MyProperties;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
@@ -16,9 +17,7 @@ public class Database {
             Class.forName("org.sqlite.JDBC");
 
             Properties properties = myProperties.getProps();
-            String jdbcStr = properties.getProperty("jdbcstring2");
-
-            System.out.println(jdbcStr);
+            String jdbcStr = properties.getProperty("jdbcstring");
 
             Connection con =  DriverManager.getConnection(jdbcStr);
             return con;
