@@ -15,7 +15,7 @@
 
 <script>
   setTimeout(()=>{
-    window.location.href = "login";
+    window.location.href = "../login";
   },5000)</script>
 
 </body>
