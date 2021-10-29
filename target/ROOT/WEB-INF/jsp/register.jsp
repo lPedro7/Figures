@@ -36,6 +36,9 @@
 
     <button type="submit">Registra't</button>
     <a href="login">Ja tens compte? Logueja't !</a>
+    <br>
+    <p>·L'username ha de tenir mínim 6 caràcters</p>
+    <p>·La contrassenya ha de tenir mínim 8 caràcters</p>
 </form>
 
 

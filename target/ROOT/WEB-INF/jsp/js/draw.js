@@ -24,11 +24,11 @@ function drawTriangle(x, y, gr, col) {
 
 function drawPentagon(x, y, gr, col) {
 
-    var numberOfSides = 5;
-    var radius=gr;
+    let numberOfSides = 5;
+    let radius=gr;
 
 
-    var angle = 2*Math.PI/numberOfSides;
+    let angle = 2*Math.PI/numberOfSides;
     ctx.beginPath();
     ctx.translate(x, y);
     ctx.moveTo (radius*Math.cos(0), radius*Math.sin(0));
@@ -40,7 +40,6 @@ function drawPentagon(x, y, gr, col) {
     ctx.closePath();
     ctx.fillStyle = col;
     ctx.fill();
-    console.log("dibujo hech2")
 }
 
 function drawStar(x, y, gr, col) {
@@ -67,7 +66,6 @@ function drawStar(x, y, gr, col) {
 
 
 function chooseType(type, x, y ,gr ,col) {
-    console.log("hola", type)
     switch (type) {
         case "cercle":
             drawCircle(x, y, gr, col);
@@ -79,7 +77,6 @@ function chooseType(type, x, y ,gr ,col) {
             drawTriangle(x, y, gr, col);
             break;
         case "pentagon":
-            console.log("drawPentagon")
             drawPentagon(x, y, gr, col);
             break;
         case "estrella":

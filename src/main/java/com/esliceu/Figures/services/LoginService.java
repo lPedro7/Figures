@@ -28,6 +28,7 @@ public class LoginService {
         if (!username.matches(".{6,20}")) return false;
         if (!password.matches(".{8,20}")) return false;
 
+
         for(User u:users){
             if (u.getUsername().equals(username)){
                 return false;

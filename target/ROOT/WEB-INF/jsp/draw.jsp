@@ -82,26 +82,8 @@
     let ctx = canvas.getContext("2d");
 
     function draw() {
-        ctx.clearRect(0, 0, 1024, 768);
-        switch (tipusFigura) {
-            case "cercle":
-                drawCircle(coordX, coordY, grandaria, color);
-                break;
-            case "quadrat":
-                drawSquare(coordX, coordY, grandaria, color);
-                break;
-            case "triangle":
-                drawTriangle(coordX, coordY, grandaria, color);
-                break;
-            case "pentagon":
-                drawPentagon(coordX, coordY, grandaria, color);
-                break;
-            case "estrella":
-                drawStar(coordX, coordY, grandaria, color);
-                break;
-            default:
-                break;
-        }
+        chooseType(tipusFigura,coordX,coordY,grandaria,color);
+
     }
 
 
@@ -115,25 +97,8 @@
         let visGrandaria = document.querySelector('#grandaria').value;
         let visColor = document.querySelector('#color').value
 
-        switch (visTipus) {
-            case "cercle":
-                drawCircle(visCoordX, visCoordY, visGrandaria, visColor);
-                break;
-            case "quadrat":
-                drawSquare(visCoordX, visCoordY, visGrandaria, visColor);
-                break;
-            case "triangle":
-                drawTriangle(visCoordX, visCoordY, visGrandaria, visColor);
-                break;
-            case "pentagon":
-                drawPentagon(visCoordX, visCoordY, visGrandaria, visColor);
-                break;
-            case "estrella":
-                drawStar(visCoordX, visCoordY, visGrandaria, visColor);
-                break;
-            default:
-                break;
-        }
+        chooseType(visTipus,visCoordX,visCoordY,visGrandaria,visColor);
+
     }
 
     <%@include file="js/draw.js" %>
