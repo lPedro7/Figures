@@ -33,6 +33,8 @@ public class FiguraDaoImpl implements FiguraDao{
                 figura.setColor(rs.getString(5));
                 figura.setGrandaria(rs.getInt(6));
                 figura.setUsername_owner(rs.getString(7));
+                figura.setNomFigura2(rs.getString(8));
+                figura.setComposed(rs.getBoolean(9));
 
                 ps.close();
                 rs.close();
@@ -66,6 +68,9 @@ public class FiguraDaoImpl implements FiguraDao{
                 figura.setColor(rs.getString(5));
                 figura.setGrandaria(rs.getInt(6));
                 figura.setUsername_owner(rs.getString(7));
+                figura.setNomFigura2(rs.getString(8));
+                figura.setComposed(rs.getBoolean(9));
+
                 figuras.add(figura);
             }
 
@@ -100,6 +105,9 @@ public class FiguraDaoImpl implements FiguraDao{
                 figura.setColor(rs.getString(5));
                 figura.setGrandaria(rs.getInt(6));
                 figura.setUsername_owner(rs.getString(7));
+                figura.setNomFigura2(rs.getString(8));
+                figura.setComposed(rs.getBoolean(9));
+
                 figuras.add(figura);
             }
             return figuras;
@@ -114,7 +122,7 @@ public class FiguraDaoImpl implements FiguraDao{
     public void createFigura(Figura figura) {
         Connection con = db.getConnection();
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO Figura VALUES(?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Figura VALUES(?,?,?,?,?,?,?,?,?)");
             ps.setString(1,figura.getNom());
             ps.setString(2,figura.getTipus());
             ps.setInt(3,figura.getCoordX());
@@ -122,6 +130,8 @@ public class FiguraDaoImpl implements FiguraDao{
             ps.setString(5,figura.getColor());
             ps.setInt(6,figura.getGrandaria());
             ps.setString(7,figura.getUsername_owner());
+            ps.setString(8,figura.getNomFigura2());
+            ps.setBoolean(9,figura.isComposed());
             ps.execute();
 
             ps.close();

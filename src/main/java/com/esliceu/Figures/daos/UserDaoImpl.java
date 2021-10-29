@@ -28,9 +28,6 @@ public class UserDaoImpl implements UserDao {
                 String us = rs.getString(1);
                 String password = rs.getString(2);
 
-                System.out.println(us);
-                System.out.println(password);
-
                 User u = new User();
                 u.setUsername(us);
                 u.setPassword(password);
@@ -85,8 +82,6 @@ public class UserDaoImpl implements UserDao {
         try {
             PreparedStatement ps = con.prepareStatement("INSERT INTO User('username','password') VALUES(?,?)");
 
-            System.out.println(user.getUsername());
-            System.out.println(user.getPassword());
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.execute();

@@ -1,8 +1,10 @@
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\VerFiguraServlet.java
+D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\CombineServlet.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\DrawServlet.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\UserDaoImpl.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\UserDao.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\models\Figura.java
+D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\services\FiguraService.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\utils\MyProperties.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\RegisterServlet.java
 D:\Aplicaciones\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\Database.java

@@ -19,39 +19,46 @@
 <nav>
     <button onclick="window.location.href='allfigures'">Veure totes les figures</button>
     <button onclick="window.location='draw'">Crear nova figura</button>
+    <button onclick="window.location='combine'">Combinar Figures</button>
     <button onclick="window.location='../logout'">Logout</button>
 </nav>
 <h2>My Figures</h2>
 
-    <table border="1">
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Tipus</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>Grandaria</th>
+        <th>Color</th>
+        <th>Visualitza</th>
+        <th>Elimina</th>
+    </tr>
+    <c:forEach items="${figures}" var="figura">
         <tr>
-            <th>Nom</th>
-            <th>Tipus</th>
-            <th>X</th>
-            <th>Y</th>
-            <th>Grandaria</th>
-            <th>Color</th>
-            <th>Visualitza</th>
-            <th>Elimina</th>
-        </tr>
-        <c:forEach items="${figures}" var="figura">
-            <tr>
-                <form method="post">
-                    <td><input type="text" disabled value="${figura.nom}" name="name"></td>
+            <form method="post">
+                <td><input type="text" disabled value="${figura.nom}" name="name"></td>
+                <c:if test="${figura.composed == false}">
                     <td><input type="text" disabled value="${figura.tipus}" name="tipus"></td>
-                    <td><input type="text" disabled value="${figura.coordX}" name="coordX"></td>
-                    <td><input type="text" disabled value="${figura.coordY}" name="coordY"></td>
-                    <td><input type="text" disabled value="${figura.grandaria}"></td>
-                    <td><input type="text" disabled value="${figura.color}"></td>
-                    <td><a href="verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
-                    </td>
-                    <td>
-                        <button formaction="figures?nom=${figura.nom}">Elimina</button>
-                    </td>
-                </form>
-            </tr>
-        </c:forEach>
-    </table>
+                </c:if>
+                <c:if test="${figura.composed == true}">
+                    <td><input type="text" disabled value="composed" name="tipus"></td>
+                </c:if>
+
+                <td><input type="text" disabled value="${figura.coordX}" name="coordX"></td>
+                <td><input type="text" disabled value="${figura.coordY}" name="coordY"></td>
+                <td><input type="text" disabled value="${figura.grandaria}"></td>
+                <td><input type="text" disabled value="${figura.color}"></td>
+                <td><a href="verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
+                </td>
+                <td>
+                    <button formaction="figures?nom=${figura.nom}">Elimina</button>
+                </td>
+            </form>
+        </tr>
+    </c:forEach>
+</table>
 
 
 <script>

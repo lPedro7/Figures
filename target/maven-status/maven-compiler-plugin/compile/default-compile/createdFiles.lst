@@ -1,4 +1,5 @@
 com\esliceu\Figures\daos\UserDao.class
+com\esliceu\Figures\controllers\CombineServlet.class
 com\esliceu\Figures\daos\Database.class
 com\esliceu\Figures\daos\UserDaoImpl.class
 com\esliceu\Figures\filters\AuthFilter.class
@@ -6,6 +7,7 @@ com\esliceu\Figures\controllers\RegisterServlet.class
 com\esliceu\Figures\services\LoginService.class
 com\esliceu\Figures\models\User.class
 com\esliceu\Figures\utils\MyProperties.class
+com\esliceu\Figures\services\FiguraService.class
 com\esliceu\Figures\controllers\AllFiguresServlet.class
 com\esliceu\Figures\daos\FiguraDao.class
 com\esliceu\Figures\controllers\OwnFiguresServlet.class

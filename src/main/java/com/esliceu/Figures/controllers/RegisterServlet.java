@@ -23,16 +23,22 @@ public class RegisterServlet extends HttpServlet {
 
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-
+        String repPassword = req.getParameter("repPassword");
         LoginService loginService = new LoginService();
+        boolean register;
 
-        boolean register = loginService.registerOk(username,password);
+        register = loginService.registerOk(username, password);
 
-        if (!register){
-            req.setAttribute("registerMessage","Error creant l'usuari");
+
+        if (!password.equals(repPassword)) {
+            register = false;
+        }
+
+        if (!register) {
+            req.setAttribute("registerMessage", "Error creant l'usuari");
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
             dispatcher.forward(req, resp);
-        }else {
+        } else {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             dispatcher.forward(req, resp);
         }

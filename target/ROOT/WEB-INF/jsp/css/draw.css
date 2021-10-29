@@ -4,7 +4,7 @@
     background: #1ECBD1;
 }
 
-nav>button {
+button {
 
     background-color: #ACF6FE;
     border: none;
@@ -60,8 +60,9 @@ label, input, form>select, form>button {
     flex-basis: 100%;
     padding-bottom: 2%;
     border: solid 1px black;
-
 }
+
+
 
 #visualitzar{
     float: left;

@@ -31,6 +31,8 @@
     <input type="text" name="username">
     <label for="password">Password</label>
     <input type="password" name="password">
+    <label for="repPassowrd">Repeteix la password</label>
+    <input type="password" name="repPassword">
 
     <button type="submit">Registra't</button>
     <a href="login">Ja tens compte? Logueja't !</a>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 
 @WebServlet(value = "/private/verfigura")
 public class VerFiguraServlet extends HttpServlet {
@@ -25,6 +26,11 @@ public class VerFiguraServlet extends HttpServlet {
         Figura figura = figuraDao.getFigura(nomFigura,userOwner);
 
         session.setAttribute("verFigura",figura);
+
+        if (figura.isComposed()){
+            session.setAttribute("figura2",figuraDao.getFigura(figura.getNomFigura2(), (String) req.getAttribute("username")));
+        }
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/verfigura.jsp");
         dispatcher.forward(req, resp);

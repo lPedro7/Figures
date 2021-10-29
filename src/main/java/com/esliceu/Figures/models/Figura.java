@@ -9,6 +9,17 @@ public class Figura {
     private int coordY;
     private String color;
     private int grandaria;
+    private String nomFigura2;
+    private boolean composed;
+
+
+    public boolean isComposed() {
+        return composed;
+    }
+
+    public void setComposed(boolean composed) {
+        this.composed = composed;
+    }
 
     public int getCoordX() {
         return coordX;
@@ -67,4 +78,11 @@ public class Figura {
     }
 
 
+    public String getNomFigura2() {
+        return nomFigura2;
+    }
+
+    public void setNomFigura2(String nomFigura2) {
+        this.nomFigura2 = nomFigura2;
+    }
 }
