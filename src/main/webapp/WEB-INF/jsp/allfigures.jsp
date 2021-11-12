@@ -30,7 +30,7 @@
 <h2>Figures</h2>
 
 
-<table border="1">
+<table border="1" class="table">
     <tr>
         <th>Nom</th>
         <th>Tipus</th>

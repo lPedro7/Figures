@@ -27,12 +27,18 @@
         ${loginMessage}
     </div>
   </c:if>
-  <label for="username">Usuari</label>
-  <input type="text" name="username">
-  <label for="password">Password</label>
-  <input type="password" name="password">
+  <div class="form-group">
+    <label for="username">Usuari</label>
+    <input type="text" name="username" class="form-control">
+  </div>
+  <div class="form-group">
 
-  <button type="submit">Entrar</button>
+    <label for="password" >Password</label>
+    <input type="password" name="password" class="form-control">
+</div>
+
+
+  <button type="submit" class="btn btn-primary">Entrar</button>
   <a href="register"> Registra't ! </a>
 
 </form>

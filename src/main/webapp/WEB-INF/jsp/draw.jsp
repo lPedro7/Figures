@@ -11,7 +11,8 @@
 <html>
 <head>
     <title>Dibuixa la figura</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 <body>
@@ -42,35 +43,54 @@
 <div id="form">
 
     <form action="draw" method="post">
+        <div class="form-group">
+            <label for="name">Nom :</label>
+            <input type="text" name="name" id="name">
 
-        <label for="name">Nom :</label>
-        <input type="text" name="name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="tipus">Figura :</label>
+            <select name="tipus" id="tipus" class="form-select">
+                <option value="cercle">Cercle</option>
+                <option value="quadrat">Quadrat</option>
+                <option value="triangle">Triangle</option>
+                <option value="pentagon">Pentàgon</option>
+                <option value="estrella">Estrella 7 Puntes</option>
+            </select>
 
-        <label for="tipus">Figura :</label>
-        <select name="tipus" id="tipus">
-            <option value="cercle">Cercle</option>
-            <option value="quadrat">Quadrat</option>
-            <option value="triangle">Triangle</option>
-            <option value="pentagon">Pentàgon</option>
-            <option value="estrella">Estrella 7 Puntes</option>
-        </select>
-
+        </div>
         <label>Coordenades</label>
-        <label for="coordsX">X :</label>
-        <input type="number" name="coordsX" id="coordsX" required>
-        <label for="coordsX">Y :</label>
-        <input type="number" name="coordsY" id="coordsY" required>
 
-        <label for="grandaria">Grandària :</label>
-        <input type="number" name="grandaria" id="grandaria" required>
+        <div class="form-group">
 
-        <label for="color">Color :</label>
-        <input type="color" name="color" id="color">
+            <label for="coordsX">X :</label>
+            <input type="number" name="coordsX" id="coordsX" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="coordsX">Y :</label>
+            <input type="number" name="coordsY" id="coordsY" required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="grandaria">Grandària :</label>
+            <input type="number" name="grandaria" id="grandaria" required>
+        </div>
+
+        <div class="form-group">
+
+            <label for="color">Color :</label>
+            <input type="color" name="color" id="color">
+
+        </div>
 
 
         <button type="submit" onclick="draw()">Desa</button>
     </form>
-    <button onclick='visualitza()' id="visualitzar"> Visualitza</button>
+    <button onclick='visualitza()' id="visualitzar" class="btn btn-primary"> Visualitza</button>
 
 </div>
 <script>
@@ -87,7 +107,7 @@
     let ctx = canvas.getContext("2d");
 
     function draw() {
-        chooseType(tipusFigura,coordX,coordY,grandaria,color);
+        chooseType(tipusFigura, coordX, coordY, grandaria, color);
 
     }
 
@@ -102,7 +122,7 @@
         let visGrandaria = document.querySelector('#grandaria').value;
         let visColor = document.querySelector('#color').value
 
-        chooseType(visTipus,visCoordX,visCoordY,visGrandaria,visColor);
+        chooseType(visTipus, visCoordX, visCoordY, visGrandaria, visColor);
 
     }
 

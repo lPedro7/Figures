@@ -38,7 +38,6 @@ public class FiguraDaoImpl implements FiguraDao{
 
                 ps.close();
                 rs.close();
-                con.close();
                 return figura;
             }
 
@@ -73,7 +72,7 @@ public class FiguraDaoImpl implements FiguraDao{
 
                 figuras.add(figura);
             }
-
+            rs.close();
             ps.close();
             con.close();
 
@@ -110,6 +109,8 @@ public class FiguraDaoImpl implements FiguraDao{
 
                 figuras.add(figura);
             }
+            rs.close();
+            ps.close();
             return figuras;
         }catch (SQLException e){
             e.printStackTrace();
