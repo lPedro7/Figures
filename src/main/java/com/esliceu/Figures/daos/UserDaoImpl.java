@@ -1,6 +1,7 @@
 package com.esliceu.Figures.daos;
 
 import com.esliceu.Figures.models.User;
+import org.springframework.stereotype.Component;
 
 import javax.xml.transform.Result;
 import java.sql.Connection;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserDaoImpl implements UserDao {
     Database db = new Database();
 

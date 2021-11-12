@@ -3,13 +3,18 @@ package com.esliceu.Figures.services;
 import com.esliceu.Figures.daos.UserDao;
 import com.esliceu.Figures.daos.UserDaoImpl;
 import com.esliceu.Figures.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.regex.Pattern;
 
+@Service
 public class LoginService {
 
-    UserDao userDao = new UserDaoImpl();
+    @Autowired
+    UserDao userDao;
+
     List<User> users = userDao.getUsers();
 
     public boolean loginOk(String username, String password) {

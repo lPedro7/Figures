@@ -22,9 +22,9 @@
 
 <form action="login" method="post" class="form-floating">
 
-  <c:if test="${not empty loginMessage}">
+  <c:if test="${not empty message}">
     <div id="errorMessage">
-        ${loginMessage}
+        ${message}
     </div>
   </c:if>
   <div class="form-group">
