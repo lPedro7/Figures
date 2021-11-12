@@ -11,14 +11,19 @@
 <html>
 <head>
     <title>All Figures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<style>
-    <%@include file="/WEB-INF/jsp/css/listFigures.css" %>
-</style>
 <body>
 <nav>
-    <button onclick="window.location.href='figures'">Les meves figures</button>
-    <button onclick="window.location='../logout'">Logout</button>
+    <ul class="nav">
+        <li class="nav-item">
+            <button onclick="window.location.href='figures'" class="nav-link">Les meves figures</button>
+        </li>
+        <li class="nav-item">
+            <button onclick="window.location='../logout'" class="nav-link">Logout</button>
+        </li>
+    </ul>
 </nav>
 
 

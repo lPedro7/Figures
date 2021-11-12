@@ -17,7 +17,7 @@ public class Database {
             Class.forName("org.sqlite.JDBC");
 
             Properties properties = myProperties.getProps();
-            String jdbcStr = properties.getProperty("jdbcstring");
+            String jdbcStr = properties.getProperty("jdbcstring3");
 
             Connection con =  DriverManager.getConnection(jdbcStr);
             return con;

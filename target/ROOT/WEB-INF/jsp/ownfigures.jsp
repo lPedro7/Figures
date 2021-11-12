@@ -11,34 +11,47 @@
 <html>
 <head>
     <title>My Figures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 <body>
-<style>
-    <%@include file="/WEB-INF/jsp/css/listFigures.css" %>
-</style>
 <nav>
-    <button onclick="window.location.href='allfigures'">Veure totes les figures</button>
-    <button onclick="window.location='draw'">Crear nova figura</button>
-    <button onclick="window.location='combine'">Combinar Figures</button>
-    <button onclick="window.location='../logout'">Logout</button>
+    <ul class="nav">
+        <li class="nav-item">
+            <button onclick="window.location.href='allfigures'" class="nav-link">Veure totes les figures</button>
+        </li>
+        <li class="nav-item">
+            <button onclick="window.location='draw'" class="nav-link">Crear nova figura</button>
+        </li>
+        <li class="nav-item">
+            <button onclick="window.location='combine'" class="nav-link">Combinar Figures</button>
+        </li>
+        <li class="nav-item">
+            <button onclick="window.location='../logout'" class="nav-link">Logout</button>
+        </li>
+    </ul>
 </nav>
+
 <h2>My Figures</h2>
 
-<table border="1">
-    <tr>
-        <th>Nom</th>
-        <th>Tipus</th>
-        <th>X</th>
-        <th>Y</th>
-        <th>Grandaria</th>
-        <th>Color</th>
-        <th>Visualitza</th>
-        <th>Elimina</th>
-    </tr>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Tipus</th>
+            <th scope="col">X</th>
+            <th scope="col">Y</th>
+            <th scope="col">Grandaria</th>
+            <th scope="col">Color</th>
+            <th scope="col">Visualitza</th>
+            <th scope="col">Elimina</th>
+        </tr>
+    </thead>
     <c:forEach items="${figures}" var="figura">
         <tr>
             <form method="post">
-                <td><input type="text" disabled value="${figura.nom}" name="name"></td>
+                <td scope="row"><input type="text" disabled value="${figura.nom}" name="name"></td>
                 <c:if test="${figura.composed == false}">
                     <td><input type="text" disabled value="${figura.tipus}" name="tipus"></td>
                 </c:if>
