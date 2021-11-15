@@ -7,6 +7,7 @@ C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\es
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\models\User.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\utils\MyProperties.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\interceptors\AuthInterceptor.java
+C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\OwnFiguresController.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\OwnFiguresServlet.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\UserDaoImpl.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\configuration\MyConfiguration.java
@@ -15,6 +16,7 @@ C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\es
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\VerFiguraServlet.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\FiguraDao.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\filters\AuthFilter.java
+C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\services\LoginServiceImpl.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\controllers\LoginController.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\daos\FiguraDaoImpl.java
 C:\Users\pedro\Dropbox\2daw\21-22\Servidor\Projects\Figures\src\main\java\com\esliceu\Figures\models\Figura.java

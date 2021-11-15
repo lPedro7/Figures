@@ -1,7 +1,13 @@
 package com.esliceu.Figures.daos;
 
 import com.esliceu.Figures.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.xml.transform.Result;
 import java.sql.Connection;
@@ -13,10 +19,12 @@ import java.util.List;
 
 @Component
 public class UserDaoImpl implements UserDao {
-    Database db = new Database();
+    @Autowired
+    Database db;
 
     @Override
-    public User getUser(String username) {
+    public User getUser(@RequestParam String username) {
+
         Connection con = db.getConnection();
 
         try {
@@ -29,11 +37,9 @@ public class UserDaoImpl implements UserDao {
 
                 String us = rs.getString(1);
                 String password = rs.getString(2);
-
                 User u = new User();
                 u.setUsername(us);
                 u.setPassword(password);
-
 
                 preparedStatement.close();
 

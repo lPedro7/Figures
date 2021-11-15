@@ -1,6 +1,5 @@
 package com.esliceu.Figures.controllers;
 
-import com.esliceu.Figures.services.LoginService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/*
 @WebServlet(value = "/register")
 public class RegisterServlet extends HttpServlet {
     @Override
@@ -46,3 +45,4 @@ public class RegisterServlet extends HttpServlet {
 
     }
 }
+*/

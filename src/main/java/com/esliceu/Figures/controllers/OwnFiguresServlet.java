@@ -3,6 +3,7 @@ package com.esliceu.Figures.controllers;
 import com.esliceu.Figures.daos.FiguraDao;
 import com.esliceu.Figures.daos.FiguraDaoImpl;
 import com.esliceu.Figures.models.Figura;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,8 +18,12 @@ import java.util.List;
 
 @WebServlet(value = "/private/figures")
 public class OwnFiguresServlet extends HttpServlet {
+    @Autowired
     HttpSession session;
+
+    @Autowired
     FiguraDao figuraDao;
+
     List<Figura> figuras;
 
     @Override

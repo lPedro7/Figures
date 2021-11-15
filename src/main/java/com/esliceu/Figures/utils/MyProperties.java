@@ -1,8 +1,11 @@
 package com.esliceu.Figures.utils;
 
+import org.springframework.stereotype.Component;
+
 import java.io.InputStream;
 import java.util.Properties;
 
+@Component
 public class MyProperties {
     public Properties getProps(){
         Properties props = new Properties();

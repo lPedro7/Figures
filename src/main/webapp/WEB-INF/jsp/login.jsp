@@ -18,8 +18,6 @@
 <body>
 <h2>Inici de Sessió</h2>
 
-
-
 <form action="login" method="post" class="form-floating">
 
   <c:if test="${not empty message}">
@@ -42,10 +40,5 @@
   <a href="register"> Registra't ! </a>
 
 </form>
-
-
 </body>
-<head>
-    <title>Login</title>
-</head>
 </html>

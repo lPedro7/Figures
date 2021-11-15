@@ -17,21 +17,27 @@
 <h2>Registra't</h2>
 
 
-<form action="register" method="post">
+<form action="register" method="post" class="form-floating">
     <c:if test="${not empty registerMessage}">
         <div id="errorMessage">
                 ${registerMessage}
         </div>
     </c:if>
-
+    <div class="form-group">
     <label for="username">Usuari</label>
-    <input type="text" name="username">
-    <label for="password">Password</label>
-    <input type="password" name="password">
-    <label for="repPassowrd">Repeteix la password</label>
-    <input type="password" name="repPassword">
+    <input type="text" name="username" class="form-control">
+</div>
+    <div class="form-group">
 
-    <button type="submit">Registra't</button>
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control">
+    </div>
+    <div class="form-group">
+
+    <label for="repPassowrd">Repeteix la password</label>
+    <input type="password" name="repPassword" class="form-control">
+</div>
+    <button type="submit" class="btn btn-primary">Registra't</button>
     <a href="login">Ja tens compte? Logueja't !</a>
 
     <p>·L'username ha de tenir mínim 6 caràcters</p>

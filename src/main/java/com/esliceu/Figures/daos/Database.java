@@ -1,15 +1,19 @@
 package com.esliceu.Figures.daos;
 
 import com.esliceu.Figures.utils.MyProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+@Component
 public class Database {
 
-    MyProperties myProperties = new MyProperties();
+    MyProperties myProperties;
 
     public Connection getConnection()
     {

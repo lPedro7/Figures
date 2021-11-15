@@ -3,15 +3,24 @@ package com.esliceu.Figures.services;
 import com.esliceu.Figures.daos.FiguraDao;
 import com.esliceu.Figures.daos.FiguraDaoImpl;
 import com.esliceu.Figures.models.Figura;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+@Service
 public class FiguraService {
 
-    private final FiguraDao figuraDao = new FiguraDaoImpl();
+    private FiguraDao figuraDao = new FiguraDaoImpl();
+
+    @Autowired
+    HttpSession session;
 
     public void checkFigure(String nomFigura, String tipus, String coordX, String coordY, String grandaria, String color, HttpServletRequest req) {
         boolean check = true;
@@ -104,8 +113,6 @@ public class FiguraService {
 
     Figura fig1 = figuraDao.getFigura(figura1,username);
 
-
-
         Figura f = new Figura();
         f.setNom(nom);
         f.setTipus(fig1.getTipus());
@@ -119,5 +126,19 @@ public class FiguraService {
         figuraDao.createFigura(f);
     }
 
+    public List<Figura> allFigures(){
+        return figuraDao.getFigures();
+    }
+
+    public List<Figura> figuresByUser(@RequestParam String username){
+        return figuraDao.getFiguresByUser(username);
+    }
+
+    public void removeFigura(String nomFigura){
+
+        Figura f = figuraDao.getFigura(nomFigura, (String) session.getAttribute("username"));
+
+        figuraDao.deleteFigura(f);
+    }
 
 }

@@ -1,6 +1,8 @@
 package com.esliceu.Figures.daos;
 
 import com.esliceu.Figures.models.Figura;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class FiguraDaoImpl implements FiguraDao{
-    Database db = new Database();
+    Database db;
+
     Figura figura;
     @Override
     public Figura getFigura(String nom_Figura, String username_owner) {

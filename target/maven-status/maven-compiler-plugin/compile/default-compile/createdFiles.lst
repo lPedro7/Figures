@@ -2,8 +2,8 @@ com\esliceu\Figures\daos\UserDao.class
 com\esliceu\Figures\controllers\CombineServlet.class
 com\esliceu\Figures\daos\Database.class
 com\esliceu\Figures\daos\UserDaoImpl.class
-com\esliceu\Figures\controllers\RegisterServlet.class
 com\esliceu\Figures\services\LoginService.class
+com\esliceu\Figures\controllers\OwnFiguresController.class
 com\esliceu\Figures\models\User.class
 com\esliceu\Figures\utils\MyProperties.class
 com\esliceu\Figures\configuration\MyConfiguration.class
@@ -14,6 +14,7 @@ com\esliceu\Figures\controllers\OwnFiguresServlet.class
 com\esliceu\Figures\daos\FiguraDaoImpl.class
 com\esliceu\Figures\interceptors\AuthInterceptor.class
 com\esliceu\Figures\controllers\LogoutServlet.class
+com\esliceu\Figures\services\LoginServiceImpl.class
 com\esliceu\Figures\controllers\LoginController.class
 com\esliceu\Figures\controllers\DrawServlet.class
 com\esliceu\Figures\controllers\VerFiguraServlet.class
