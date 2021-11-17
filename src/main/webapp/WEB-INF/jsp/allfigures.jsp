@@ -50,7 +50,7 @@
             <td>${figura.grandaria}</td>
             <td>${figura.color}</td>
             <td>${figura.username_owner}</td>
-            <td><a href="verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
+            <td><a href="/private/verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
             </td>
         </tr>
     </c:forEach>

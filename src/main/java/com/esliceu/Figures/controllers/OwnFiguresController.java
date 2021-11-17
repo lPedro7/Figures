@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,7 +24,6 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/private/figures")
 public class OwnFiguresController{
     @Autowired
     HttpSession session;
@@ -36,14 +36,17 @@ public class OwnFiguresController{
     @GetMapping("/private/figures")
     public String ownfigures(){
 
+        System.out.println(session.getAttribute("username"));
+
         figuras = figuraService.figuresByUser((String) session.getAttribute("username"));
         session.setAttribute("figures", figuras);
         return "ownfigures";
     }
 
-    @PostMapping("/private/figures")
-    public void deleteFigure(@RequestParam String nomFigura){
-        figuraService.removeFigura(nomFigura);
+    @PostMapping(value = "/private/figures")
+    public RedirectView deleteFigure(@RequestParam String nom){
+        figuraService.removeFigura(nom);
+        return new RedirectView("/private/figures");
     }
 
 }

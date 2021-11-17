@@ -73,9 +73,11 @@ public class UserDaoImpl implements UserDao {
                 users.add(u);
             }
             ps.close();
+
             return users;
 
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
 
@@ -88,13 +90,16 @@ public class UserDaoImpl implements UserDao {
         Connection con = db.getConnection();
 
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO User('username','password') VALUES(?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO User VALUES(?,?)");
 
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.execute();
+            db.getConnection().close();
 
         } catch (SQLException e) {
+
+
             e.printStackTrace();
         }
 

@@ -13,6 +13,8 @@ import java.util.List;
 
 @Component
 public class FiguraDaoImpl implements FiguraDao{
+
+    @Autowired
     Database db;
 
     Figura figura;

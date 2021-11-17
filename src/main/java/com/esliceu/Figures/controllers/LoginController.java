@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class LoginController{
+public class LoginController {
 
     @Autowired
     LoginService loginService;
@@ -22,24 +23,43 @@ public class LoginController{
     HttpSession session;
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
     @PostMapping("/login")
-    public String checkLogin(Model model,@RequestParam String username, @RequestParam String password){
+    public String checkLogin(Model model, @RequestParam String username, @RequestParam String password) {
 
-        if(loginService.loginOk(username, password)){
-                session.setAttribute("username",username);
-               return "loginok";
+        if (loginService.loginOk(username, password)) {
+            session.setAttribute("username", username);
+            return "loginok";
         }
         model.addAttribute("message", "Usuari o password incorrectes");
         return "login";
     }
 
     @GetMapping("/register")
-    public String register(){
+    public String register() {
         return "register";
     }
 
+    @PostMapping("/register")
+    public String registerUser(@RequestParam String username, @RequestParam String password) {
+
+        boolean register = loginService.registerOk(username, password);
+
+        if (!register) {
+            session.setAttribute("registerMessage", "Error creant l'usuari");
+            return "register";
+
+        } else {
+            return "login";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "logout";
+    }
 }

@@ -1,5 +1,6 @@
 package com.esliceu.Figures.utils;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -7,6 +8,8 @@ import java.util.Properties;
 
 @Component
 public class MyProperties {
+
+    @Bean
     public Properties getProps(){
         Properties props = new Properties();
         try{

@@ -34,6 +34,8 @@ public class LoginServiceImpl implements LoginService{
 
         List<User> users = userDao.getUsers();
 
+        if (users == null) return false;
+
         for (User u : users) {
             if (u.getUsername().equals(username)) {
                 return false;

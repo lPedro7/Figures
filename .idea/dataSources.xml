@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="figura.db" uuid="b175c8c5-b0fe-4fae-b2c0-127389bf6b11">
+    <data-source source="LOCAL" name="figuras.db" uuid="03aa9e1e-6996-44fe-a1ac-855eb7fed70b">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/figura.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../bbdd/figuras.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

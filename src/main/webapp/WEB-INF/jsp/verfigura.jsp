@@ -86,12 +86,15 @@
 
     chooseType(tipus,coordX,coordY,grandaria,color);
 
+
     if (${verFigura.composed == true}) {
         const tipus2 = "${figura2.tipus}";
         const coordX2 = "${figura2.coordX}";
         const coordY2 = "${figura2.coordY}";
         const color2 = "${figura2.color}";
         const grandaria2 = "${figura2.grandaria}";
+        console.log(${verFigura.composed})
+
         chooseType(tipus2,coordX2,coordY2,grandaria2,color2)
     }else{
 

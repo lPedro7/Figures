@@ -50,7 +50,7 @@
     </thead>
     <c:forEach items="${figures}" var="figura">
         <tr>
-            <form method="post">
+            <form method="post" action="/private/figures?nom=${figura.nom}">
                 <td scope="row"><input type="text" disabled value="${figura.nom}" name="name"></td>
                 <c:if test="${figura.composed == false}">
                     <td><input type="text" disabled value="${figura.tipus}" name="tipus"></td>
@@ -63,10 +63,10 @@
                 <td><input type="text" disabled value="${figura.coordY}" name="coordY"></td>
                 <td><input type="text" disabled value="${figura.grandaria}"></td>
                 <td><input type="text" disabled value="${figura.color}"></td>
-                <td><a href="verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
+                <td><a href="/private/verfigura?nom=${figura.nom}&user_owner=${figura.username_owner}">Visualitza</a>
                 </td>
                 <td>
-                    <button formaction="figures?nom=${figura.nom}">Elimina</button>
+                    <button>Elimina</button>
                 </td>
             </form>
         </tr>

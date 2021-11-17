@@ -15,8 +15,8 @@ function drawSquare(x, y, gr, col) {
 function drawTriangle(x, y, gr, col) {
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.lineTo((x), (y + gr));
-    ctx.lineTo((x + gr), y);
+    ctx.lineTo(x + gr / 2, y + gr);
+    ctx.lineTo(x - gr / 2, y + gr);
     ctx.closePath();
     ctx.fillStyle = col;
     ctx.fill();

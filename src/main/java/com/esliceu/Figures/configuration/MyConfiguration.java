@@ -30,9 +30,11 @@ public class MyConfiguration implements WebMvcConfigurer {
         return bean;
     }
 
+
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
-                .addPathPatterns("/Figures_war/private/**");
+                .addPathPatterns("/private/**");
     }
 }
